@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: traders_raw
+    database: TRADERS
+    schema: RAW
+
+    tables:
+      - name: customers
+        identifier: CUSTOMERS
+
+      - name: products
+        identifier: PRODUCTS
+
+      - name: orders
+        identifier: ORDERS
+
+      - name: payments
+        identifier: PAYMENTS

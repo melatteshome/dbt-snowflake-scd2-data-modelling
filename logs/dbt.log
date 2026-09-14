@@ -1,0 +1,107 @@
+[0m00:29:22.043366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40cbd3d7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40ca963ed0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40ca9639d0>]}
+
+
+============================== 00:29:22.046930 | 735f180f-7a6c-43db-a91e-fc27dba90632 ==============================
+[0m00:29:22.046930 [info ] [MainThread]: Running with dbt=1.12.3
+[0m00:29:22.047616 [debug] [MainThread]: running dbt with arguments {'send_anonymous_usage_stats': 'True', 'empty': 'None', 'introspect': 'True', 'version_check': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'write_json': 'True', 'log_cache_events': 'False', 'log_path': 'logs', 'invocation_command': 'dbt init', 'log_format': 'default', 'debug': 'False', 'printer_width': '80', 'static_parser': 'True', 'target_path': 'None', 'warn_error': 'None', 'indirect_selection': 'eager', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'quiet': 'False', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'hints_enabled': 'True', 'profiles_dir': '/home/melat/.dbt', 'cache_selected_only': 'False'}
+[0m00:29:22.058865 [info ] [MainThread]: Creating dbt configuration folder at /home/melat/.dbt
+[0m00:29:51.409358 [debug] [MainThread]: Starter project path: /home/melat/dbt-snowflake-project/dbt-env/lib/python3.13/site-packages/dbt/include/starter_project
+[0m00:29:51.413505 [info ] [MainThread]: Setting up your profile.
+[0m00:29:55.941169 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m00:29:55.941784 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m00:29:55.942314 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m00:34:11.758031 [info ] [MainThread]: Profile retail_analytics written to /home/melat/.dbt/profiles.yml using target's profile_template.yml and your supplied values.
+[0m00:34:11.760089 [info ] [MainThread]: Running dbt debug to validate the project...
+[0m00:34:11.760999 [info ] [MainThread]: dbt version: 1.12.3
+[0m00:34:11.761519 [info ] [MainThread]: python version: 3.13.5
+[0m00:34:11.761993 [info ] [MainThread]: python path: /home/melat/dbt-snowflake-project/dbt-env/bin/python
+[0m00:34:11.762659 [info ] [MainThread]: os info: Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41
+[0m00:34:11.827270 [info ] [MainThread]: Using profiles dir at /home/melat/.dbt
+[0m00:34:11.827839 [info ] [MainThread]: Using profiles.yml file at /home/melat/.dbt/profiles.yml
+[0m00:34:11.828362 [info ] [MainThread]: Using dbt_project.yml file at /home/melat/dbt-snowflake-project/retail_analytics/dbt_project.yml
+[0m00:34:11.829143 [info ] [MainThread]: adapter type: snowflake
+[0m00:34:11.829611 [info ] [MainThread]: adapter version: 1.12.0
+[0m00:34:11.962578 [info ] [MainThread]: Configuration:
+[0m00:34:11.963115 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:34:11.963637 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:34:11.964064 [info ] [MainThread]: Required dependencies:
+[0m00:34:11.964598 [debug] [MainThread]: Executing "git --help"
+[0m00:34:11.965824 [info ] [MainThread]:  - git [[31mERROR[0m]
+
+[0m00:34:11.966499 [info ] [MainThread]: Connection:
+[0m00:34:11.967107 [info ] [MainThread]:   account: SMJQTCS-DH86117
+[0m00:34:11.967737 [info ] [MainThread]:   user: melatteshome
+[0m00:34:11.968312 [info ] [MainThread]:   database: TRADERS
+[0m00:34:11.968863 [info ] [MainThread]:   warehouse: TRADERS_WH
+[0m00:34:11.969474 [info ] [MainThread]:   role: DBT_ROLE
+[0m00:34:11.969927 [info ] [MainThread]:   schema: STAGING
+[0m00:34:11.970393 [info ] [MainThread]:   authenticator: None
+[0m00:34:11.970814 [info ] [MainThread]:   oauth_client_id: None
+[0m00:34:11.971369 [info ] [MainThread]:   query_tag: None
+[0m00:34:11.971874 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:34:11.972368 [info ] [MainThread]:   host: None
+[0m00:34:11.972871 [info ] [MainThread]:   port: None
+[0m00:34:11.973447 [info ] [MainThread]:   proxy_host: None
+[0m00:34:11.974005 [info ] [MainThread]:   proxy_port: None
+[0m00:34:11.974604 [info ] [MainThread]:   protocol: None
+[0m00:34:11.975157 [info ] [MainThread]:   connect_retries: 1
+[0m00:34:11.975615 [info ] [MainThread]:   connect_timeout: None
+[0m00:34:11.976050 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:34:11.976635 [info ] [MainThread]:   retry_all: False
+[0m00:34:11.977065 [info ] [MainThread]:   insecure_mode: False
+[0m00:34:11.977559 [info ] [MainThread]:   reuse_connections: True
+[0m00:34:11.978115 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m00:34:11.978751 [info ] [MainThread]:   workload_identity_provider: None
+[0m00:34:11.979359 [info ] [MainThread]:   workload_identity_entra_resource: None
+[0m00:34:11.979989 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m00:34:11.980816 [info ] [MainThread]: Registered adapter: snowflake=1.12.0
+[0m00:34:12.097429 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:34:12.101385 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:34:12.102071 [debug] [MainThread]: On debug: select 1 as id
+[0m00:34:12.102668 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:34:15.408364 [debug] [MainThread]: SQL status: SUCCESS 1 in 3.306 seconds
+[0m00:34:15.409490 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:34:15.410033 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:34:15.410701 [info ] [MainThread]: Error from git --help: Could not find command, ensure it is in the user's PATH: "git"
+
+[0m00:34:15.411342 [info ] [MainThread]: Your new dbt project "retail_analytics" was created!
+Initialized new project in /home/melat/dbt-snowflake-project/retail_analytics/retail_analytics
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m00:34:15.411864 [info ] [MainThread]: [31mYour profile may need adjustments. You can find the logs of `dbt debug` above[0m
+[0m00:34:15.413245 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 293.46863, "process_in_blocks": "0", "process_kernel_time": 0.383088, "process_mem_max_rss": "163128", "process_out_blocks": "5016", "process_user_time": 2.844891}
+[0m00:34:15.414333 [debug] [MainThread]: Command `dbt init` succeeded at 00:34:15.414164 after 293.47 seconds
+[0m00:34:15.414722 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:34:15.415088 [debug] [MainThread]: On debug: Close
+[0m00:34:15.862772 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40c3b583e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40c3a82570>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f40c3a229c0>]}
+[0m00:34:15.863357 [debug] [MainThread]: Flushing usage events
+[0m00:34:16.669194 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:34:49.597779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8c6297f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8b2a3d90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8b2a3890>]}
+
+
+============================== 00:34:49.601482 | 61357d76-413d-413a-9f4b-47a00af84cd7 ==============================
+[0m00:34:49.601482 [info ] [MainThread]: Running with dbt=1.12.3
+[0m00:34:49.602203 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'debug': 'False', 'profiles_dir': '/home/melat/.dbt', 'no_print': 'None', 'target_path': 'None', 'indirect_selection': 'eager', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'log_cache_events': 'False', 'empty': 'None', 'printer_width': '80', 'use_colors': 'True', 'log_format': 'default', 'invocation_command': 'dbt test', 'introspect': 'True', 'fail_fast': 'False', 'warn_error': 'None', 'static_parser': 'True', 'maximum_seed_size_mib': '1', 'version_check': 'True', 'write_json': 'True', 'log_path': 'logs', 'cache_selected_only': 'False', 'hints_enabled': 'True'}
+[0m00:34:49.602813 [error] [MainThread]: [[31mERROR[0m]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/melat/dbt-snowflake-project/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:34:49.603905 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 0.1046981, "process_in_blocks": "0", "process_kernel_time": 0.167957, "process_mem_max_rss": "111868", "process_out_blocks": "24", "process_user_time": 1.739485}
+[0m00:34:49.604523 [debug] [MainThread]: Command `dbt test` failed at 00:34:49.604359 after 0.11 seconds
+[0m00:34:49.605002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8b174180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8b25fad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fdf8b2cbbd0>]}
+[0m00:34:49.605451 [debug] [MainThread]: Flushing usage events
+[0m00:34:50.282705 [debug] [MainThread]: An error was encountered while trying to flush usage events
