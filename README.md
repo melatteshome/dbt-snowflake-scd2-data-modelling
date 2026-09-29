@@ -1,4 +1,4 @@
-# E-Commerce Data Warehouse | Snowflake + dbt
+# Sales Analytics | Snowflake + dbt
 
 This project implements an analytics-ready e-commerce data warehouse using **Snowflake and dbt**, with a focus on dimensional modeling, historical data management, and maintainable transformation pipelines.
 
