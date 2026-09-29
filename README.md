@@ -21,6 +21,8 @@ The fact table is modeled at the **order-item grain — one row per product sold
 
 Surrogate keys are used for dimensional relationships instead of relying solely on source-system identifiers.
 
+<img src="docs/star_schema.drawio.png" alt="project architecture" width="5000" >
+
 ### SCD Type 2
 
 Customer and product attributes can change over time, so these dimensions are modeled using **Slowly Changing Dimension Type 2 (SCD2)**.
