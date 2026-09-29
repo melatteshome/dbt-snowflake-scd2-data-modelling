@@ -7,6 +7,7 @@ The warehouse transforms raw customer, product, order, and order-item data into 
 ## Architecture
 
 <img src="docs/project_architecture.png" alt="project architecture" width="5000" >
+
 ### Staging Layer
 
 The staging layer provides a clean interface between the raw source data and downstream transformations.
