@@ -6,7 +6,7 @@ The warehouse transforms raw customer, product, order, and order-item data into 
 
 ## Architecture
 
-<img src="docs/project_architecture.png" alt="project architecture" >
+<img src="docs/project_architecture.png" alt="project architecture" width="5000" >
 ### Staging Layer
 
 The staging layer provides a clean interface between the raw source data and downstream transformations.
@@ -20,6 +20,8 @@ The final analytical layer follows a **star schema**, separating descriptive bus
 The fact table is modeled at the **order-item grain — one row per product sold within an order**. This allows analysis at both product and order level while maintaining a clearly defined grain.
 
 Surrogate keys are used for dimensional relationships instead of relying solely on source-system identifiers.
+
+<img src="docs/star_schema.drawio.png" alt="project architecture" width="5000" >
 
 ### SCD Type 2
 
