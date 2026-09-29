@@ -1,48 +1,78 @@
-# Retail Analytics — dbt + Snowflake
+# E-Commerce Data Warehouse | Snowflake + dbt
 
-A data engineering project that transforms raw e-commerce data into analytics-ready datasets using **Snowflake** and **dbt**.
+This project implements an analytics-ready e-commerce data warehouse using **Snowflake and dbt**, with a focus on dimensional modeling, historical data management, and maintainable transformation pipelines.
 
-The project demonstrates dimensional data modeling, transformation workflows, and **Slowly Changing Dimension Type 2 (SCD2)** implementation for preserving historical changes in customer and product data.
+The warehouse transforms raw customer, product, order, and order-item data into structured analytical models using a layered dbt architecture.
 
 ## Architecture
 
-<img src="docs/project_architecture.png" alt="project architecture" width="500">
+<img src="docs/project_architecture.png" alt="project architecture" >
+### Staging Layer
 
+The staging layer provides a clean interface between the raw source data and downstream transformations.
 
-## Key Features
+Source fields are standardized, cleaned, and prepared here so that business logic remains separate from source-specific transformations.
 
-- Built modular SQL transformations using **dbt**
-- Used **Snowflake** as the cloud data warehouse
-- Created staging models to clean and standardize raw data
-- Implemented **SCD Type 2** to preserve historical dimension changes
-- Built dimensional models using **fact and dimension tables**
-- Used surrogate keys to maintain dimensional relationships
-- Added dbt tests to validate data quality and model integrity
+### Dimensional Modeling
+
+The final analytical layer follows a **star schema**, separating descriptive business entities into dimensions and transactional data into fact tables.
+
+The fact table is modeled at the **order-item grain — one row per product sold within an order**. This allows analysis at both product and order level while maintaining a clearly defined grain.
+
+Surrogate keys are used for dimensional relationships instead of relying solely on source-system identifiers.
+
+### SCD Type 2
+
+Customer and product attributes can change over time, so these dimensions are modeled using **Slowly Changing Dimension Type 2 (SCD2)**.
+
+Rather than overwriting existing records, attribute changes create a new dimension version while preserving the previous state.
+
+Historical records are managed using:
+
+- `valid_from`
+- `valid_to`
+- `is_current`
+- surrogate keys
+
+This allows fact records to reference the correct version of a dimension based on when the transaction occurred.
+
+### Incremental Processing
+
+SCD2 dimensions are implemented using **dbt incremental models** so that existing warehouse data does not need to be rebuilt on every run.
+
+Only new or changed records are processed, while previous versions are expired and retained for historical analysis.
+
+### Data Quality
+
+dbt tests are used to validate key assumptions within the warehouse, including:
+
+- uniqueness of identifiers
+- required fields are not null
+- referential integrity between models
+- consistency of dimensional relationships
 
 ## Tech Stack
 
-**Snowflake • dbt • SQL • Jinja • Git**
+**Snowflake | dbt | SQL | Jinja | Git**
 
-## Project Structure
+## Repository Structure
 
 ```text
 models/
-├── staging/        # Raw data cleaning and standardization
-├── intermediate/   # Business logic and transformations
-└── marts/          # Dimension and fact models
+├── staging/          # Source cleaning and standardization
+├── intermediate/     # Transformation and business logic
+└── marts/
+    ├── dimensions/   # Analytical dimensions and SCD2 models
+    └── facts/        # Transaction-level fact models
 
-macros/             # Reusable dbt/Jinja logic
-tests/              # Data quality tests
+macros/               # Reusable dbt/Jinja logic
+tests/                # Data quality checks
 ```
 
-## Running the Project
+## Key Engineering Concepts
 
-```bash
-dbt deps
-dbt run
-dbt test
-```
+This project demonstrates practical implementation of:
 
-## Purpose
+**Snowflake data warehousing • dbt transformations • dimensional modeling • star schema design • fact table grain definition • SCD Type 2 • incremental models • surrogate keys • historical data tracking • data quality testing • modular SQL transformations**
 
-This project demonstrates how dbt and Snowflake can be used to build a maintainable analytics pipeline while handling historical dimensional changes using SCD Type 2.
+The result is a warehouse designed to preserve historical context while providing clean, reliable datasets for downstream analytics.
